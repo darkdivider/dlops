@@ -2,7 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class activation():
-    def __init__(self, x: np.array, activation: str, out: str='print'):
+    def __init__(self, x, activation: str, out: str='print'):
+        assert activation in ['tanh','sigmoid','relu','leakyrelu']
+        x=np.array(x)
         self.x=x
         y=eval('self.'+activation+'()')
         if out=='print':
@@ -24,7 +26,7 @@ class activation():
     def leakyrelu(self):
         return self.x*(self.x>0)+self.x*0.01*(self.x<0)
     def tanh(self):
-        return np.tanh(self.x)
+        return np.tanh(self.x/np.pi)
 
-x=np.linspace(-10,10,100)
-activation(x,'leakyrelu','print')
+# x=np.linspace(-10,10,100)
+# activation(x,'leakyrelu','print')
