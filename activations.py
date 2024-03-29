@@ -26,5 +26,5 @@ class activation():
     def tanh(self):
         return np.tanh(self.x)
 
-x=np.linspace(-10,10,100)
-activation(x,'leakyrelu','print')
+# x=np.linspace(-10,10,100)
+# activation(x,'leakyrelu','print')
